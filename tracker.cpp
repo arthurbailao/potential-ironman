@@ -10,11 +10,6 @@ bool Tracker::contains(const cv::KeyPoint& keypoint) const
   return this->_circle.contains(keypoint.pt);
 }
 
-void Tracker::position(const cv::Point2f& point)
-{
-  this->_circle.center(point);
-}
-
 cv::Point2f Tracker::position() const
 {
   return this->_circle.center();

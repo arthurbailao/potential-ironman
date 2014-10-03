@@ -8,7 +8,6 @@ class Circle
 public:
   Circle(const cv::Point2f& center, float radius);
 
-  float distanceTo(const Circle& circle) const;
   bool contains(const cv::Point2f& pt) const;
 
   cv::Point2f center() const;

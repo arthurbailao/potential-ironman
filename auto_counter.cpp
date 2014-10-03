@@ -17,7 +17,7 @@ AutoCounter::AutoCounter(const cv::Mat& mask)
 {
 }
 
-int AutoCounter::operator ()(const std::vector<cv::KeyPoint>& keypoints)
+int AutoCounter::count(const std::vector<cv::KeyPoint>& keypoints)
 {
   int total = 0;
   std::vector<cv::KeyPoint>::const_iterator keypoint = keypoints.begin();

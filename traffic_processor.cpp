@@ -63,7 +63,7 @@ void TrafficProcessor::run()
     if(this->_processor) {
       this->_processor->process(frame, output);
 
-      int vehicles = counter(dynamic_cast<VehicleDetector*>(this->_processor)->keypoints());
+      int vehicles = counter.count(dynamic_cast<VehicleDetector*>(this->_processor)->keypoints());
 
       std::stringstream extractor;
       if(vehicles) {

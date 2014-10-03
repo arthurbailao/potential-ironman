@@ -1,6 +1,5 @@
 #include "circle.hpp"
 
-
 namespace {
   float distance(const cv::Point2f& pt1, const cv::Point2f& pt2)
   {
@@ -12,11 +11,6 @@ Circle::Circle(const cv::Point2f& center, float radius)
   : _center(center)
   , _radius(radius)
 {
-}
-
-float Circle::distanceTo(const Circle& circle) const
-{
-  return distance(this->center(), circle.center());
 }
 
 bool Circle::contains(const cv::Point2f& pt) const
@@ -38,6 +32,7 @@ float Circle::radius() const
 {
   return this->_radius;
 }
+
 void Circle::radius(float radius)
 {
   this->_radius = radius;

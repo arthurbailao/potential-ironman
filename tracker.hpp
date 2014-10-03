@@ -13,7 +13,6 @@ public:
 
   bool contains(const cv::KeyPoint& keypoint) const;
 
-  void position(const cv::Point2f& point);
   cv::Point2f position() const;
 
   void update(const cv::KeyPoint& keypoint);

@@ -14,7 +14,7 @@ class AutoCounter
 public:
   AutoCounter(const cv::Mat& mask = cv::Mat());
 
-  int operator()(const std::vector<cv::KeyPoint>& keypoints);
+  int count(const std::vector<cv::KeyPoint>& keypoints);
 
   //Funçao de debug: desenha trackers
   void drawTrackers(cv::Mat& img) const;

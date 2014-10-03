@@ -15,17 +15,17 @@ int main(int argc, char** argv)
 {
   cv::CommandLineParser parser(argc, argv, keys);
 
-  if (parser.get<bool>("help")) {
+  if(parser.get<bool>("help")) {
     parser.printParams();
-    return 0;
+    return 1;
   }
 
   bool debug = parser.get<bool>("debug");
   std::string filename = parser.get<std::string>("input");
 
   if(filename.empty()) {
-    std::cout << "no input file" << std::endl;
-    return 0;
+    parser.printParams();
+    return 1;
   }
 
   VehicleDetector detector(debug);
