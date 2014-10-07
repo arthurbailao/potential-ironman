@@ -5,7 +5,7 @@
 const char* keys =
   "{h | help | false | Help}"
   "{f | frames | 30 | slice of frames to play }"
-  "{d | delay | 20 | delay between frames}"
+  "{d | delay | 30 | delay between frames}"
   "{i | input |  | input file name}"
   ;
 
@@ -45,7 +45,9 @@ int main(int argc, char** argv)
 
     int count = static_cast<int>(capture.get(CV_CAP_PROP_POS_FRAMES));
     if(count % frames == 0) {
-      k = (char)cv::waitKey();
+      while(k != 27 && k != 32) {
+        k = (char)cv::waitKey();
+      }
       if(k == 27) break;
     }
 
