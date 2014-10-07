@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
@@ -39,11 +40,16 @@ int main(int argc, char** argv)
     cv::Mat frame;
     capture >> frame;
 
-    cv::imshow("video", frame);
     char k = (char)cv::waitKey(delay);
     if(k == 27) break;
 
     int count = static_cast<int>(capture.get(CV_CAP_PROP_POS_FRAMES));
+    std::stringstream extractor;
+    extractor << count;
+
+    cv::putText(frame, extractor.str(), cv::Point(frame.cols - 150, frame.rows - 10), CV_FONT_ITALIC, 1.0, cv::Scalar(0,0,255), 5, CV_AA);
+    cv::imshow("video", frame);
+
     if(count % frames == 0) {
       while(k != 27 && k != 32) {
         k = (char)cv::waitKey();
